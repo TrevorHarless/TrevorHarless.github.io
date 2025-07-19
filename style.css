@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    padding: 20px;
+    padding-top: 80px;
+    min-height: 100vh;
+}
+
+.terminal-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(13, 17, 23, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #30363d;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-btn {
+    color: #58a6ff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.back-btn:hover {
+    color: #7ee787;
+}
+
+.terminal-nav-title {
+    color: #8b949e;
+    font-size: 14px;
+}
+
+.terminal {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #161b22;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.terminal-header {
+    background-color: #21262d;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #30363d;
+}
+
+.terminal-controls {
+    display: flex;
+    gap: 8px;
+    margin-right: 16px;
+}
+
+.control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.close {
+    background-color: #ff5f57;
+}
+
+.minimize {
+    background-color: #ffbd2e;
+}
+
+.maximize {
+    background-color: #28ca42;
+}
+
+.terminal-title {
+    color: #8b949e;
+    font-size: 14px;
+}
+
+.terminal-body {
+    padding: 20px;
+    line-height: 1.6;
+    min-height: 400px;
+    overflow-y: auto;
+}
+
+.prompt {
+    margin: 16px 0 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.user {
+    color: #58a6ff;
+    font-weight: bold;
+}
+
+.command {
+    color: #7ee787;
+}
+
+.cursor {
+    color: #c9d1d9;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.output {
+    margin: 8px 0 16px 0;
+    padding-left: 0;
+}
+
+.output h1 {
+    color: #f0f6fc;
+    font-size: 2em;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.output h2 {
+    color: #f0f6fc;
+    font-size: 1.5em;
+    margin: 16px 0 12px 0;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 4px;
+}
+
+.output h3 {
+    color: #58a6ff;
+    margin: 12px 0 4px 0;
+}
+
+.output p {
+    margin: 4px 0;
+    color: #c9d1d9;
+}
+
+.output a {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+.output a:hover {
+    text-decoration: underline;
+}
+
+.file-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 8px;
+    margin: 8px 0;
+}
+
+.file {
+    color: #7ee787;
+    padding: 4px 8px;
+    background-color: #0d1117;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.project {
+    margin: 16px 0;
+    padding: 12px 0;
+    border-bottom: 1px solid #21262d;
+}
+
+.project:last-child {
+    border-bottom: none;
+}
+
+.input-line {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    position: relative;
+}
+
+.input-line .prompt {
+    color: #58a6ff;
+    font-weight: bold;
+    margin: 0;
+    margin-right: 8px;
+}
+
+#command-input {
+    background: transparent;
+    border: none;
+    color: #c9d1d9;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    outline: none;
+    flex: 1;
+    padding: 0;
+    margin: 0;
+}
+
+.highlight {
+    color: #7ee787;
+    font-weight: bold;
+}
+
+.error {
+    color: #ff7b72;
+}
+
+.success {
+    color: #7ee787;
+}
+
+.info {
+    color: #58a6ff;
+}
+
+.directory {
+    color: #58a6ff;
+    font-weight: bold;
+}
+
+.executable {
+    color: #7ee787;
+}
+
+.command-history {
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.command-history .prompt {
+    color: #58a6ff;
+    font-weight: bold;
+    margin: 0;
+}
+
+.command-history .command {
+    color: #c9d1d9;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .terminal-body {
+        padding: 15px;
+    }
+    
+    .output h1 {
+        font-size: 1.5em;
+    }
+    
+    .file-list {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+}
