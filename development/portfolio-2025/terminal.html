@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trevor Harless - Interactive Terminal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="terminal-nav">
+        <a href="index.html" class="back-btn">← Back to Portfolio</a>
+        <div class="terminal-nav-title">Interactive Terminal</div>
+    </nav>
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="terminal-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+            </div>
+            <div class="terminal-title">trevor@portfolio:~</div>
+        </div>
+        <div class="terminal-body" id="terminal">
+            <div class="output">
+                <p>Welcome to Trevor's Interactive Portfolio Terminal!</p>
+                <p>Type '<span class="highlight">help</span>' to see available commands.</p>
+            </div>
+            <div class="input-line">
+                <span class="prompt">trevor@portfolio:~$</span>
+                <input type="text" id="command-input" autofocus autocomplete="off" spellcheck="false">
+            </div>
+        </div>
+    </div>
+    <script src="terminal.js"></script>
+</body>
+</html>
